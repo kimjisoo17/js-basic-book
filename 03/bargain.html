@@ -30,8 +30,11 @@
 		function showPrice(){
 			var originPrice = document.querySelector("#oPrice").value;
 			var rate = document.querySelector("#rate").value;
-			document.querySelector("#showResult").innerHTML = "상품의 원래가격은 " + originPrice + "원 이고 " + "할인율은 " + rate + "% 입니다."
-		}
+			var savedPrice = originPrice * (rate / 100);
+			var resultPrice = originPrice - savedPrice;
+
+			document.querySelector("#showResult").innerHTML = "상품의 원가는 " + originPrice + "원 이고, 할인율은 " + rate + "% 입니다." + "할인된 금액은 " + savedPrice + "원 이고 " + resultPrice + "원에 구매 가능합니다."
+		}			
 	</script>
 </body>
 </html>
